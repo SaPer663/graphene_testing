@@ -1,0 +1,13 @@
+aniso8601==7.0.0
+django==2.2.28; python_version >= "3.5"
+graphene-django==2.15.0
+graphene==2.1.9
+graphql-core==2.3.2
+graphql-relay==2.0.1
+promise==2.3
+pytz==2022.1; python_version >= "3.5"
+rx==1.6.1
+singledispatch==3.7.0; python_version >= "2.6"
+six==1.16.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.3.0" and python_version >= "2.6"
+sqlparse==0.4.2; python_version >= "3.5"
+text-unidecode==1.3
