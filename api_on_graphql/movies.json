@@ -3,23 +3,74 @@
       "model": "movies.actor",
       "pk": 1,
       "fields": {
-        "name": "Michael B. Jordan"
+        "name": "Юрий Никулин"
       }
     },
     {
       "model": "movies.actor",
       "pk": 2,
       "fields": {
-        "name": "Sylvester Stallone"
+        "name": "Георгий Вицин"
+      }
+    },
+    {
+      "model": "movies.actor",
+      "pk": 3,
+      "fields": {
+        "name": "Евгений Моргунов"
+      }
+    },
+    {
+      "model": "movies.actor",
+      "pk": 4,
+      "fields": {
+        "name": "Леонид Куравлёв"
+      }
+    },
+    {
+      "model": "movies.actor",
+      "pk": 5,
+      "fields": {
+        "name": "Владимир Этуш"
+      }
+    },
+    {
+      "model": "movies.actor",
+      "pk": 6,
+      "fields": {
+        "name": "Александр Демьяненко"
+      }
+    },
+    {
+      "model": "movies.actor",
+      "pk": 7,
+      "fields": {
+        "name": "Наталья Крачковская"
+      }
+    },
+    {
+      "model": "movies.actor",
+      "pk": 8,
+      "fields": {
+        "name": "Наталья Селезнёва"
       }
     },
     {
       "model": "movies.movie",
       "pk": 1,
       "fields": {
-        "title": "Creed",
-        "actors": [1, 2],
-        "year": "2015"
+        "title": "Самогонщики",
+        "actors": [1, 2, 3],
+        "year": "1961"
+      }
+    },
+    {
+      "model": "movies.movie",
+      "pk": 2,
+      "fields": {
+        "title": "Иван Васильевич меняет профессию",
+        "actors": [4, 5, 6, 7, 8],
+        "year": "1973"
       }
     }
   ]
