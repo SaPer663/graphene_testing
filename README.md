@@ -1,12 +1,12 @@
 # API на GraphQl
 ### Описание
-Это API на GraphQL сделано для ознакомления с протоколом GraphQl и в частности 
-с библиотекой ```graphene-django```
+Это API на GraphQL сделано для ознакомления с протоколом GraphQL и в частности 
+с библиотекой    ```graphene-django```
 
 Через API можно получить информацию о фильмах(состав актёров, год выхода на экраны, название) и об актёрах(имя_фамилию), которые в них снимались.
 ### Технологии
 - [`Python 3.8`](https://www.python.org/)
-- [`Django 2.2.28`](https://github.com/django/django)
+- [`Django 2.2.28`](https://github.com/django/django) для моделей
 - [`graphene-django 2.15.0`](https://github.com/graphql-python/graphene) для API
 - [`poetry 1.1.7`](https://github.com/python-poetry/poetry) для управления зависимостями
 - [`flake8 4.0.1`](http://flake8.pycqa.org/en/latest/) линтер
@@ -27,7 +27,7 @@ docker build . -t graph_image
 ```
 docker run -v $(pwd)/api_on_graphql:/code -p 8000:8000 -w /code/ graph_image python manage.py migrate
 ```
-- заполните базу данными и файла movies.json
+- заполните базу данными из файла movies.json
 ```
 docker run -v $(pwd)/api_on_graphql:/code -p 8000:8000 -w /code/ graph_immage \
 python manage.py loaddata movies.json
@@ -41,7 +41,7 @@ python manage.py runserver 0.0.0.0:8000
 ```
 http://0.0.0.0:8000/
 ```
-По адресу ```http://127.0.0.1:8000/graphql/``` можно по тестировать API через
+По адресу ```http://127.0.0.1:8000/graphql/``` можно тестировать API через
 [`GraphiQL`](https://www.electronjs.org/apps/graphiql) — встроенной IDE для выполнения запросов.
 
 ### Примеры запросов
