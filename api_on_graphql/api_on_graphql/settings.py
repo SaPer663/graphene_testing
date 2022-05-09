@@ -1,19 +1,19 @@
 import os
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+from decouple import AutoConfig
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
+config = AutoConfig(search_path=os.path.join(BASE_DIR, 'config'))
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '4#_wo&3v6c@ae_#snke=ls07-wnyd4ks@qs&p4xx$p1zd$eh4o'
+SECRET_KEY = config('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DJANGO_DEBUG', False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ('0.0.0.0', )
 
 
 # Application definition

@@ -8,6 +8,7 @@ authors = ["SaPer663 <saper663ru@gmail.com>"]
 python = "^3.8"
 Django = "2.2.28"
 graphene-django = "^2.15.0"
+python-decouple = "^3.6"
 
 [tool.poetry.dev-dependencies]
 mypy = "^0.942"
