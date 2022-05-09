@@ -109,7 +109,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
+# graphene
 GRAPHENE = {
     "SCHEMA": "api_on_graphql.schema.schema"
 }

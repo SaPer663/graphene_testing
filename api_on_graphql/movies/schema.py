@@ -30,11 +30,13 @@ class Query(ObjectType):
         id = kwargs.get('id')
         if id is not None:
             return Actor.objects.get(id=id)
+        return None
 
     def resolve_movie(self, info, **kwargs) -> Optional[Movie]:
         id = kwargs.get('id')
         if id is not None:
             return Movie.objects.get(id=id)
+        return None
 
     def resolve_actors(self, info, **kwargs) -> QuerySet:
         return Actor.objects.all()
@@ -65,7 +67,7 @@ class CreateActor(graphene.Mutation):
     actor = graphene.Field(ActorType())
 
     @staticmethod
-    def mutate(root, info, input_object: Actor = None):
+    def mutate(root, info, input_object: Actor):
         actor, _ = Actor.objects.get_or_create(name=input_object.name)
         return CreateActor(ok=True, actor=actor)
 
@@ -80,7 +82,7 @@ class UpdateActor(graphene.Mutation):
     actor = graphene.Field(ActorType)
 
     @staticmethod
-    def mutate(root, info, id, input_object: Actor = None):
+    def mutate(root, info, id, input_object: Actor):
         ok = False
         actor = Actor.objects.get(id=id)
         if not actor:
@@ -100,7 +102,7 @@ class CreateMovie(graphene.Mutation):
     movie = graphene.Field(MovieType)
 
     @staticmethod
-    def mutate(root, info, input_object: Movie = None):
+    def mutate(root, info, input_object: Movie):
         ok = True
         actors = []
         for input_actor in input_object.actors:
@@ -126,7 +128,7 @@ class UpdateMovie(graphene.Mutation):
     movie = graphene.Field(MovieType)
 
     @staticmethod
-    def mutate(root, info, id, input_object: Movie = None):
+    def mutate(root, info, id, input_object: Movie):
         ok = False
         movie = Movie.objects.get(id=id)
         if not movie:
