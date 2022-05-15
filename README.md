@@ -23,21 +23,19 @@ git clone https://github.com/SaPer663/graphene_testing.git
 ```
 docker build . -t graph_image
 ```
+- запустите контейнер
+```
+docker run --name graph -d -v $(pwd)/api_on_graphql:/code -p 8000:8000 -w /code/ graph_image python manage.py runserver 0.0.0.0:8000
+```
 - сделайте миграции в базе данных
 ```
-docker run -v $(pwd)/api_on_graphql:/code -p 8000:8000 -w /code/ graph_image python manage.py migrate
+docker exec graph python migrate
 ```
 - заполните базу данными из файла movies.json
 ```
-docker run -v $(pwd)/api_on_graphql:/code -p 8000:8000 -w /code/ graph_immage \
-python manage.py loaddata movies.json
+docker exec graph python migrate loaddata movies.json
 ```
-- запустите контейнер
-```
-docker run -v $(pwd)/api_on_graphql:/code -p 8000:8000 -w /code/ graph_image \
-python manage.py runserver 0.0.0.0:8000
-```
-- после запуска контейнера сервер будет доступен по адресу:
+- сервер будет доступен по адресу:
 ```
 http://0.0.0.0:8000/
 ```
