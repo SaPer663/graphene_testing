@@ -1,4 +1,4 @@
-# API на GraphQl
+# API на GraphQL
 ### Описание
 Это API на GraphQL сделано для ознакомления с протоколом GraphQL и в частности 
 с библиотекой    ```graphene-django```
